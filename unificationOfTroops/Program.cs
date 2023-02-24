@@ -10,10 +10,10 @@ namespace unificationOfTroops
         {
             List<string> soldiers1 = new List<string>
             {
-                "Родионов",
+                "Бортников",
                 "Басманов",
                 "Кочевников",
-                "Бортников",
+                "Родионов",
                 "Усачев",
                 "Купер"
             };
@@ -29,19 +29,6 @@ namespace unificationOfTroops
             };
 
             var filteredSoldiers = soldiers1.Where(soldier => soldier.StartsWith("Б")).ToList();
-
-            for (int i = 0; i < filteredSoldiers.Count; i++)
-            {
-                for (int j = 0; j < soldiers1.Count; j++)
-                {
-                    if (soldiers1[j] == filteredSoldiers[i])
-                    {
-                        soldiers1.RemoveAt(j);
-                        j--;
-                    }
-                }
-            }
-
             var unitedSoldiers = soldiers2.Union(filteredSoldiers).ToList();
             soldiers2 = unitedSoldiers;
         }
