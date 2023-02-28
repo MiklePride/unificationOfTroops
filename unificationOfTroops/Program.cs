@@ -33,7 +33,6 @@ namespace unificationOfTroops
 
             var filteredSoldiers = soldiers1.Where(soldier => soldier.StartsWith("Б")).ToList();
             soldiers2 = soldiers2.Union(filteredSoldiers).ToList();
-
             soldiers1 = soldiers1.Except(soldiers2).ToList();
 
             ShowSoldiers(soldiers1);
